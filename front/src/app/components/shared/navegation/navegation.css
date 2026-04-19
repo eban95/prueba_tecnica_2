@@ -1,21 +1,16 @@
-.navbar {
-    background-color: #333;
-    padding: 10px;
+nav {
+    background-color: #2d2d2d;
+    padding: 15px;
+    text-align: center;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.navbar a {
+nav a {
     color: white;
+    margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
 }
 
-.navbar a:hover {
-    color: #00bcd4;
+nav a:hover {
+    color: #2d89ef;
 }

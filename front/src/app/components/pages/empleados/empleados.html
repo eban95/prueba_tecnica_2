@@ -1,0 +1,52 @@
+<h2>Crear Empleado</h2>
+
+<label>Código</label>
+<input type="number" [(ngModel)]="codigo">
+
+<label>Nombre</label>
+<input type="text" [(ngModel)]="nombre">
+
+<label>Apellido 1</label>
+<input type="text" [(ngModel)]="apellido1">
+
+<label>Apellido 2</label>
+<input type="text" [(ngModel)]="apellido2">
+
+<label>Departamento</label>
+<select [(ngModel)]="codigo_departamento">
+  <option *ngFor="let dep of departamentos" [value]="dep.codigo">
+    {{ dep.nombre }}
+  </option>
+</select>
+
+<button (click)="guardarEmpleado()">Guardar</button>
+
+<p>{{ message }}</p>
+
+<table *ngIf="empleados.length > 0">
+    <tr>
+    <th>Código</th>
+    <th>Nombre</th>
+    <th>Apellido 1</th>
+    <th>Apellido 2</th>
+    <th>Departamento</th>
+    <th>Acciones</th>
+    </tr>
+
+    <tr *ngFor="let emp of empleados">
+    <td>{{ emp.codigo }}</td>
+    <td>{{ emp.nombre }}</td>
+    <td>{{ emp.apellido1 }}</td>
+    <td>{{ emp.apellido2 }}</td>
+    <td>{{ getNombreDepartamento(emp.codigo_departamento) }}</td>
+
+    <td>
+    <button (click)="eliminarEmpleado(emp._id)">Eliminar</button>
+    <button (click)="seleccionarEmpleado(emp)">Editar</button>
+    </td>
+
+    <p *ngIf="empleados.length === 0">
+        No hay empleados cargados
+      </p>
+    </tr>
+</table>

@@ -1,129 +1,166 @@
-# 🚀 Prueba Técnica #1 - Autenticación de Usuarios
+# 🚀 Prueba Técnica #2 – MEAN Stack
 
-## 📌 Descripción
+## 📌 Descripción del Proyecto
 
-Este proyecto consiste en una aplicación fullstack que permite la gestión de usuarios mediante autenticación con JSON Web Token (JWT).
+Este proyecto consiste en el desarrollo de una aplicación web utilizando el stack MEAN (MongoDB, Express, Angular, Node.js), que permite la gestión de empleados y departamentos mediante operaciones CRUD (Crear, Leer, Actualizar y Eliminar).
 
 La aplicación incluye:
 
-- Registro de usuarios
-- Inicio de sesión
-- Visualización del usuario autenticado (Dashboard)
-- Listado de usuarios
-- Eliminación de usuarios
+* Gestión completa de empleados
+* Gestión completa de departamentos
+* Relación entre empleados y departamentos
+* Visualización de empleados agrupados por departamento
 
 ---
 
-## 🛠 Tecnologías utilizadas
+## 🧠 Funcionalidades
 
-### 🔧 Backend
-- Node.js
-- Express
-- MongoDB Atlas
-- Mongoose
-- JSON Web Token (JWT)
-- Bcrypt
+### 🔹 Empleados
 
-### 🖥 Frontend
-- Angular
-- TypeScript
+* Crear empleados
+* Listar empleados
+* Editar empleados
+* Eliminar empleados
+
+### 🔹 Departamentos
+
+* Crear departamentos
+* Listar departamentos
+* Editar departamentos
+* Eliminar departamentos
+
+### 🔹 Relación
+
+* Visualización de los empleados pertenecientes a cada departamento
+* Asociación mediante `codigo_departamento`
 
 ---
 
-## 📁 Estructura del proyecto
+## 🛠️ Tecnologías Utilizadas
 
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB (Mongo Atlas)
+* Mongoose
+
+### Frontend
+
+* Angular (Standalone Components)
+* HTML
+* CSS
+
+---
+
+## 🗂️ Estructura del Proyecto
+
+```
 backend/
- ├── src/
- │    ├── controllers/
- │    ├── models/
- │    ├── routes/
- │    ├── config/
- │    └── server.js
+  ├── models/
+  ├── controllers/
+  ├── routers/
+  └── server.js
 
-front/
- ├── src/
- │    ├── app/
- │    │    ├── components/
- │    │    │    ├── pages/
- │    │    │    │    ├── login/
- │    │    │    │    ├── register/
- │    │    │    │    ├── dashboard/
- │    │    │    │    ├── users/
- │    │    │    └── shared/
+frontend/
+  ├── components/
+  │   ├── empleados/
+  │   ├── departamentos/
+  │   └── shared/
+  └── app.routes.ts
+```
 
 ---
 
-## 🚀 Instalación y ejecución
+## ⚙️ Instalación y Ejecución
 
-### 🔧 Backend
+### 🔹 1. Clonar repositorio
 
-1. Ir a la carpeta backend:
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd prueba-tecnica
+```
+
+---
+
+### 🔹 2. Backend
+
+```bash
 cd backend
-
-2. Instalar dependencias:
 npm install
+nod src/server.js
+```
 
-3. Crear archivo .env con:
-PORT=3000
-JWT_SECRET=tu_clave_secreta
-MONGO_URI=tu_uri_de_mongodb_atlas
+El backend correrá en:
 
-4. Ejecutar servidor:
-npm run dev
-
-Servidor disponible en:
+```
 http://localhost:3000
+```
 
 ---
 
-### 🖥 Frontend
+### 🔹 3. Frontend
 
-1. Ir a la carpeta frontend:
-cd front
-
-2. Instalar dependencias:
+```bash
+cd frontend
 npm install
-
-3. Ejecutar aplicación:
 npm start
+```
 
-Aplicación disponible en:
+El frontend correrá en:
+
+```
 http://localhost:4200
+```
 
 ---
 
-## 🔐 Autenticación
+## 🔗 Endpoints principales
 
-El sistema utiliza JWT para la autenticación:
+### Empleados
 
-- El usuario inicia sesión
-- El backend genera un token
-- El token se guarda en localStorage
-- El frontend usa el usuario guardado para mostrar información en el dashboard
+* `GET /empleados`
+* `POST /empleados`
+* `PUT /empleados/:id`
+* `DELETE /empleados/:id`
 
----
+### Departamentos
 
-## 📊 Funcionalidades implementadas
-
-- ✔ Crear usuario (registro)
-- ✔ Iniciar sesión
-- ✔ Visualizar usuario autenticado (Dashboard)
-- ✔ Listar todos los usuarios
-- ✔ Eliminar usuarios
+* `GET /departamentos`
+* `POST /departamentos`
+* `PUT /departamentos/:id`
+* `DELETE /departamentos/:id`
 
 ---
 
-## 🧠 Decisiones técnicas
+## 🧩 Decisiones Técnicas
 
-- Se utilizó MongoDB Atlas para la base de datos en la nube
-- Se implementó bcrypt para el cifrado de contraseñas
-- Se usó JWT para autenticación
-- Se utilizó localStorage para mantener la sesión en el frontend
-- Se estructuró el backend siguiendo el patrón MVC
-- Se utilizaron componentes standalone en Angular para simplificar la estructura
+* Se utilizó `fetch` para la comunicación con el backend por simplicidad
+* Se implementaron componentes standalone en Angular para mayor modularidad
+* La relación entre empleados y departamentos se resolvió desde el frontend mediante filtrado de datos
+* Se utilizó MongoDB Atlas como base de datos en la nube
+
+---
+
+## 🎯 Cumplimiento de Requisitos
+
+✔ CRUD de empleados
+✔ CRUD de departamentos
+✔ Uso de MongoDB
+✔ Interfaz en Angular
+✔ Relación empleados por departamento
+✔ Estructura organizada
+
+---
+
+## 📌 Notas Finales
+
+El proyecto cumple con todos los requerimientos solicitados en la prueba técnica, incluyendo lógica, estructura, funcionalidad y presentación.
 
 ---
 
 ## 👨‍💻 Autor
 
-Desarrollado por: Esteban Linares
+Desarrollado por: Esteban linares
+
+---

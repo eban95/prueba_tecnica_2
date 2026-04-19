@@ -1,0 +1,36 @@
+<h2>Departamentos y sus empleados</h2>
+
+<table border="1" style="width: 100%; text-align: center;">
+<tr>
+    <th>Código</th>
+    <th>Departamento</th>
+    <th>Empleados</th>
+</tr>
+
+<tr *ngFor="let dep of departamentos">
+    <td>{{ dep.codigo }}</td>
+    <td>{{ dep.nombre }}</td>
+
+    <td>
+        <table>
+          <tr *ngFor="let emp of getEmpleadosPorDepartamento(dep.codigo)">
+            <td>{{ emp.codigo }}</td>
+            <td>{{ emp.nombre }} {{ emp.apellido1 }}</td>
+        </tr>
+        </table>
+    </td>
+</tr>
+</table>
+
+<button (click)="mostrarFormulario = !mostrarFormulario">
+    Agregar Departamento
+</button>
+
+<div *ngIf="mostrarFormulario">
+    <h3>Nuevo Departamento</h3>
+
+    <input type="number" placeholder="Código" [(ngModel)]="codigo">
+    <input type="text" placeholder="Nombre" [(ngModel)]="nombre">
+
+    <button (click)="guardarDepartamento()">Guardar</button>
+</div>
